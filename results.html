@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Official Election Results</h1>
+        
+        <!-- Public Results View -->
+        <div id="public-results" class="form-container">
+            <h2>Final Certified Results</h2>
+            <div id="public-results-container"></div>
+            <p>These are the final certified results.</p>
+            <p id="last-updated"></p>
+        </div>
+        
+        <!-- Admin Login (hidden by default) -->
+        <div id="admin-login" class="form-container" style="display: none;">
+            <h2>Admin Login</h2>
+            <form id="admin-form">
+                <div class="form-group">
+                    <label for="admin-username">Username:</label>
+                    <input type="text" id="admin-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Password:</label>
+                    <input type="password" id="admin-password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+        
+        <!-- Admin Controls (hidden by default) -->
+        <div id="admin-controls" class="form-container" style="display: none;">
+            <h2>Admin Panel</h2>
+            <button id="refresh-results" class="btn">Refresh Results</button>
+            <button id="toggle-release" class="btn">Toggle Results Visibility</button>
+            <div class="admin-stats" id="admin-stats"></div>
+        </div>
+    </div>
+
+    <script src="results.js"></script>
+</body>
+</html>

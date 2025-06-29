@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System with OTP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Voting System</h1>
+        
+        <!-- Voter Registration Form -->
+        <div id="registration-form" class="form-container">
+            <h2>Voter Registration</h2>
+            <form id="voter-form">
+                <div class="form-group">
+                    <label for="voter-id">Voter ID:</label>
+                    <input type="text" id="voter-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <button type="submit" class="btn">Generate OTP</button>
+            </form>
+        </div>
+        
+        <!-- OTP Verification Form -->
+        <div id="otp-form" class="form-container" style="display: none;">
+            <h2>OTP Verification</h2>
+            <p>An OTP has been sent to your registered email and phone</p>
+            <form id="verify-otp-form">
+                <div class="form-group">
+                    <label for="otp">Enter OTP:</label>
+                    <input type="text" id="otp" required maxlength="6">
+                </div>
+                <button type="submit" class="btn">Verify OTP</button>
+            </form>
+        </div>
+        
+        <!-- Voting Form -->
+        <div id="voting-form" class="form-container" style="display: none;">
+            <h2>Cast Your Vote</h2>
+            <div id="candidates-list" class="candidates-container"></div>
+            <button id="submit-vote" class="btn">Submit Vote</button>
+        </div>
+        
+        <!-- Success Message -->
+        <div id="success-message" class="form-container" style="display: none;">
+            <h2>Voting Successful!</h2>
+            <p>Thank you for participating in the election.</p>
+            <p>Your vote has been recorded.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<!-- Results Section (Admin View) -->
+<div id="results-section" class="form-container" style="display: none;">
+    <h2>Election Results</h2>
+    <div id="results-container"></div>
+    <button id="release-results" class="btn">Release Results to Public</button>
+    <button id="hide-results" class="btn" style="background-color: #e74c3c; margin-top: 10px;">Hide Results</button>
+</div>
+
+<!-- Public Results View -->
+<div id="public-results" class="form-container" style="display: none;">
+    <h2>Official Election Results</h2>
+    <div id="public-results-container"></div>
+    <p>These are the final certified results.</p>
+</div>
+
+<!-- Admin Login -->
+<div id="admin-login" class="form-container">
+    <h2>Admin Login</h2>
+    <form id="admin-form">
+        <div class="form-group">
+            <label for="admin-username">Username:</label>
+            <input type="text" id="admin-username" required>
+        </div>
+        <div class="form-group">
+            <label for="admin-password">Password:</label>
+            <input type="password" id="admin-password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+    </form>
+</div>
+</html>
